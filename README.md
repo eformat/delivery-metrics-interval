@@ -52,3 +52,9 @@ cd:commit_interval:avg{app="pet-battle-api",} 12.59201388888889
 # TYPE cd:commit_interval:stdev gauge
 cd:commit_interval:stdev{app="pet-battle-api",} 11.403846069823139
 ```
+
+## Calculations
+
+See the `commit-time-delta.ods` for calculation
+
+![images/commit-interval-calc.png](images/commit-interval-calc.png)
