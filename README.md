@@ -58,3 +58,13 @@ cd:commit_interval:stdev{app="pet-battle-api",} 11.403846069823139
 See the `commit-time-delta.ods` for calculation
 
 ![images/commit-interval-calc.png](images/commit-interval-calc.png)
+
+## Running Locally
+
+Run against thanos querier using an already deployed [grafana instance](https://github.com/petbattle/pet-battle-infra/blob/main/grafana/templates/InsertBearerTokenHook.yaml#L79)
+
+```bash
+export AUTH_HEADER=$(oc -n ateam-ci-cd serviceaccounts get-token grafana-serviceaccount)
+oc port-forward svc/thanos-querier -n openshift-monitoring 9091:9091 &
+mvn quarkus:dev
+```
